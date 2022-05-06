@@ -7,9 +7,7 @@ export const PlanetPage = () => {
 
   React.useEffect(() => {
     const fn = async () => {
-      const response = await fetch(
-        "https://swapi.dev/api/people" + params.id
-      );
+      const response = await fetch("https://swapi.dev/api/people" + params.id);
       const payload = await response.json();
       setPlanet(payload.result.properties);
     };
