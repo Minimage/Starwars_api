@@ -20,7 +20,10 @@ export const Characters = () => {
 
 
         <div>
-            <ul>
+          <div className='myText'>
+            <h1>Characters</h1>
+          </div>
+            <ul className='scroll'>
         {characters.map((item, index) => {
           let link;
           

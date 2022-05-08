@@ -14,7 +14,10 @@ export const Planets = () => {
   }, []);
   return (
     <div>
-      <ul>
+      <div className='myText'>
+            <h1>Planets</h1>
+          </div>
+      <ul className="scroll">
         {planets.map((item, index) => {
           item.name == "Tatooine" ? links.push("https://lumiere-a.akamaihd.net/v1/images/tatooine-main_1633e73f.jpeg?region=164%2C0%2C953%2C536") : "";
           item.name == "Alderaan" ? links.push("https://lumiere-a.akamaihd.net/v1/images/databank_alderaan_01_169_4a5264e2.jpeg?region=0%2C0%2C1560%2C878&width=1200") : "";

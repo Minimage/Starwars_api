@@ -10,25 +10,29 @@ export const Home = () => {
 
   return (
     <div>
-      <h1>Characters</h1>
+      <div className="myBox">
       <div className="scrolling-wrapper">
         {" "}
         <Characters />
       </div>
+      </div>
       
-
-      <h1>Planets</h1>
+      <div className="myBox">
       <div className="scrolling-wrapper">
         {" "}
         <Planets />
       </div>
+      </div>
+      
      
 
-      <h1>Vehicles</h1>
+      <div className="myBox">
       <div className="scrolling-wrapper">
         {" "}
       <Vehicles />
       </div>
+      </div>
     </div>
+    
   );
 };

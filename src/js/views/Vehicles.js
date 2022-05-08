@@ -15,7 +15,10 @@ export const Vehicles = () => {
 
   return (
     <div>
-      <ul>
+      <div className='myText'>
+            <h1>Vehicles</h1>
+          </div>
+      <ul className="scroll">
         {vehicles.map((item, index) => {
           item.name == "CR90 corvette" ? links.push("https://cdna.artstation.com/p/assets/images/images/025/920/646/large/fishy-tree-cr90-pl.jpg?1587342586") : "";
           item.name == "Star Destroyer" ? links.push("https://lumiere-a.akamaihd.net/v1/images/Star-Destroyer_ab6b94bb.jpeg?region=0%2C0%2C1600%2C900&width=768") : "";
@@ -47,7 +50,9 @@ export const Vehicles = () => {
               />
               <div className="card-body">
                 <h5 className="card-title"> {item.name}</h5>
-                <p className="card-text">Gender: {}</p>
+                <p className="card-text">Model: {item.model}</p>
+                <p className="card-text">Cargo Capacity: {item.cargo_capacity}</p>
+                <p className="card-text">Cost in credits: {item.cost_in_credits}</p>
                 <a href="#" className="btn btn-primary">
                   Go somewhere
                 </a>
