@@ -1,30 +1,38 @@
 import React from "react";
 import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
+import { Characters } from "./Characters";
+import { Planets } from "./Planets";
+import { Vehicles } from "./Vehicles";
+
 
 export const Home = () => {
-  const [characters, setCharacters] = React.useState([]);
-
-  React.useEffect(() => {
-    const fn = async () => {
-      const response = await fetch("https://www.swapi.tech/api/people");
-      const payload = await response.json();
-      setCharacters(payload.results);
-    };
-    fn();
-  }, []);
 
   return (
     <div>
-      <ul>
-        {characters.map((item, index) => {
-          return (
-            <li key={index}>
-              <a href={"/character/" + item.uid}>{item.name}</a>
-            </li>
-          );
-        })}
-      </ul>
+      <div className="myBox">
+      <div className="scrolling-wrapper">
+        {" "}
+        <Characters />
+      </div>
+      </div>
+      
+      <div className="myBox">
+      <div className="scrolling-wrapper">
+        {" "}
+        <Planets />
+      </div>
+      </div>
+      
+     
+
+      <div className="myBox">
+      <div className="scrolling-wrapper">
+        {" "}
+      <Vehicles />
+      </div>
+      </div>
     </div>
+    
   );
 };

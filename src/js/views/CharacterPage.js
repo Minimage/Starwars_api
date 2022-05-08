@@ -8,7 +8,7 @@ export const CharacterPage = () => {
   React.useEffect(() => {
     const fn = async () => {
       const response = await fetch(
-        "https://www.swapi.tech/api/people/" + params.id
+        "https://swapi.dev/api/people" + params.id
       );
       const payload = await response.json();
       setCharacter(payload.result.properties);
