@@ -57,7 +57,7 @@ export const Characters = () => {
 
            
 <div className="card" style={{width: "18rem;"}}>
-<img class="card-img-top" src={links[index]} alt="Card image cap"/>
+<img className="card-img-top" src={links[index]} alt="Card image cap"/>
 <div className="card-body">
   <h5 className="card-title"> {item.name}</h5>
   <p className="card-text">Gender: {item.gender}</p>
