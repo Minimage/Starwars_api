@@ -8,17 +8,27 @@ export const CharacterPage = () => {
   React.useEffect(() => {
     const fn = async () => {
       const response = await fetch(
-        "https://swapi.dev/api/people" + params.id
+        "https://swapi.dev/api/people/" + params.id
+        
       );
       const payload = await response.json();
       setCharacter(payload.result.properties);
+      
+
     };
     fn();
   }, []);
+  
 
   return (
     <div>
-      <h1>Character Page {character !== null ? character.name : ""}</h1>
+      {/* <h1>Character Page {character !== null ? character.name : ""}</h1> */}
+      <h1>Hello {params.id}</h1>
+      {JSON.stringify(params)}
+      console.log(character)
+      
+
+      
     </div>
   );
 };

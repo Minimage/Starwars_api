@@ -7,6 +7,7 @@ import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import { CharacterPage } from "./views/CharacterPage";
 import injectContext from "./store/appContext";
+import { Characters } from "./views/Characters";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
@@ -25,15 +26,18 @@ const Layout = () => {
           <Switch>
             <Route exact path="/">
               <Home />
+
             </Route>
 
-            <Route exact path="/character/:id">
+            <Route exact path="/characters/:id">
               <CharacterPage />
             </Route>
 
             <Route exact path="/vehicle/:id">
               <h1>Vehicle Page</h1>
             </Route>
+
+            <Route path='/Characters' component={Characters} />
 
             <Route exact path="/planet/:id">
               <h1>Planet Page</h1>
