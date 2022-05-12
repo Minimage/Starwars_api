@@ -8,11 +8,13 @@ export const CharacterPage = () => {
   React.useEffect(() => {
     const fn = async () => {
       const response = await fetch(
-        "https://swapi.dev/api/people/" + params.id
+        "https://swapi.dev/api/people/1"
         
       );
       const payload = await response.json();
-      setCharacter(payload.result.properties);
+        // console.log(payload)
+      setCharacter(payload.name);
+      console.log("Character is"+character)
       
 
     };
@@ -25,7 +27,7 @@ export const CharacterPage = () => {
       {/* <h1>Character Page {character !== null ? character.name : ""}</h1> */}
       <h1>Hello {params.id}</h1>
       {JSON.stringify(params)}
-      console.log(character)
+      
       
 
       
