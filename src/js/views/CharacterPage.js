@@ -12,20 +12,23 @@ export const CharacterPage = () => {
         
       );
       const payload = await response.json();
-        // console.log(payload)
-      setCharacter(payload.name);
-      console.log("Character is"+character)
+        
+      
+      console.log(payload)
+
+      return setCharacter(payload.name);
       
 
     };
     fn();
   }, []);
+  console.log(character);
   
 
   return (
     <div>
       {/* <h1>Character Page {character !== null ? character.name : ""}</h1> */}
-      <h1>Hello {params.id}</h1>
+      <h1>Hello {character}</h1>
       {JSON.stringify(params)}
       
       
