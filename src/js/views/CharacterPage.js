@@ -14,13 +14,12 @@ export const CharacterPage = () => {
   const [skinColor, setSkinColor] = React.useState(null);
   const [eyeColor, setEyeColor] = React.useState(null);
 
+
   React.useEffect(() => {
     
     const fn = async () => {
       const response = await fetch("https://swapi.dev/api/people/" + params.id);
       const payload = await response.json();
-
-      console.log(payload);
 
       switch (payload.name) {
           case 'Luke Skywalker':
@@ -57,37 +56,32 @@ export const CharacterPage = () => {
             links = 'https://bitsofco.de/content/images/2018/12/broken-1.png';
             break;
       }
-
       return (
         setName(payload.name),
         setBirthYear(payload.birth_year),
         setGender(payload.gender),
         setHeight(payload.height),
         setSkinColor(payload.skin_color),
-        setEyeColor(payload.eye_color,
-          
-          )
-
-        
+        setEyeColor(payload.eye_color)
       );
     };
     fn();
   }, []);
-  console.log(name);
 
   return (
     <div className="container">
       <div className="row">
-      <div className="top">
+      <div className="col-12 top">
         <div className="row">
           <div className="col-6 left">
-            <img src={links}></img>
+            <img className={name != undefined ? 'show' : "hide"} src={links} ></img>
+           
           </div>
           <div className="col-6 right">
             
             <h1>{name}</h1>
-            
-            <p>
+            {console.log('Name is: '+name)}
+            <p className={name != undefined ? 'show' : "hide"}> 
               Contrary to popular belief, Lorem Ipsum is not simply random text.
               It has roots in a piece of classical Latin literature from 45 BC,
               making it over 2000 years old. Richard McClintock, a Latin
@@ -108,7 +102,7 @@ export const CharacterPage = () => {
       </div>
       </div>
       <div className="row">
-      <div className="bottom">
+      <div className="col-12 bottom">
         <div className="row">
           <div className="col-2">
             <h3 className="item"> Name</h3>
@@ -121,7 +115,6 @@ export const CharacterPage = () => {
           <div className="col-2">
             <h3 className="item"> Gender</h3>
             <h3 className="item"> {gender !== null ? gender : ""}</h3>
-            {console.log("The link is"+links)}
           </div>
           <div className="col-2">
             <h3 className="item"> Height</h3>
