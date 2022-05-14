@@ -1,16 +1,16 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 
-export const PlanetPage = () => {
+export const VehiclePage = () => {
   const params = useParams();
 
   //Use States
-  const [planet, setPlanet] = React.useState(null);
-  const [rotation, setRotation] = React.useState(null);
-  const [orbital, setOrbital] = React.useState(null);
-  const [planet_diameter, setDiameter] = React.useState(null);
-  const [planet_climate, setClimate] = React.useState(null);
-  const [planet_terrain, setTerrain] = React.useState(null);
+  const [] = React.useState(null);
+  const [] = React.useState(null);
+  const [] = React.useState(null);
+  const [] = React.useState(null);
+  const [] = React.useState(null);
+  const [] = React.useState(null);
 
   React.useEffect(() => {
     const fn = async () => {
