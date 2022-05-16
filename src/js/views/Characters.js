@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 let links = []
 
 
@@ -11,6 +12,9 @@ export const Characters = () => {
     const response = await fetch("https://swapi.dev/api/people");
     const payload = await response.json();
     setCharacters(payload.results);
+    
+   
+
     
     };
     fn();
@@ -63,7 +67,7 @@ export const Characters = () => {
   <p className="card-text">Gender: {item.gender}</p>
   <p className="card-text">Hair-Color: {item.hair_color}</p>
   <p className="card-text">Eye-Color: {item.eye_color}</p>
-  <a href="#" className="btn btn-primary">Go somewhere</a>
+  <Link to={'/Characters/'+(index+1)} className="btn btn-primary">Go somewhere</Link>
 </div>
 </div>
             )

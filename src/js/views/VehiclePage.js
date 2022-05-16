@@ -15,7 +15,7 @@ export const VehiclePage = () => {
   React.useEffect(() => {
     const fn = async () => {
       const response = await fetch(
-        "https://swapi.dev/api/planets/" + params.id
+        "https://swapi.dev/api/starships/" + params.id
       );
       const payload = await response.json();
 

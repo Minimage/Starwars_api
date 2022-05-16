@@ -14,6 +14,7 @@ import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { Vehicles } from "./views/Vehicles";
 import { Planets } from "./views/Planets";
+import { VehiclePage } from "./views/VehiclePage";
 
 //create your first component
 const Layout = () => {
@@ -36,8 +37,8 @@ const Layout = () => {
               <CharacterPage />
             </Route>
 
-            <Route exact path="/vehicle/:id">
-              
+            <Route exact path="/Vehicles/:id">
+              <VehiclePage />
             </Route>
 
             <Route exact path="/planets/:id">

@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom'
 let links = []
 
 export const Vehicles = () => {
@@ -16,7 +17,7 @@ export const Vehicles = () => {
   return (
     <div>
       <div className='myText'>
-            <h1>Vehicles</h1>
+            <h1>Starships</h1>
           </div>
       <ul className="scroll">
         {vehicles.map((item, index) => {
@@ -53,9 +54,9 @@ export const Vehicles = () => {
                 <p className="card-text">Model: {item.model}</p>
                 <p className="card-text">Cargo Capacity: {item.cargo_capacity}</p>
                 <p className="card-text">Cost in credits: {item.cost_in_credits}</p>
-                <a href="#" className="btn btn-primary">
+                <Link to={'/Vehicles/'+(index+1)} className="btn btn-primary">
                   Go somewhere
-                </a>
+                </Link>
               </div>
             </div>
           );
