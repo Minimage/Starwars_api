@@ -35,8 +35,10 @@ export const Vehicles = () => {
           item.name == "TIE Advanced x1" ? links.push("https://cdna.artstation.com/p/assets/images/images/007/727/540/large/ansel-hsiao-x1-8.jpg?1508121329") : "";
           item.name == "Executor" ? links.push("https://lumiere-a.akamaihd.net/v1/images/databank_executor_01_169_8157df82.jpeg?region=57%2C0%2C1503%2C845&width=768") : "";
           item.name == "Rebel transport" ? links.push("https://cdna.artstation.com/p/assets/images/images/044/188/898/large/robert-bonchune-rebel-trnsprt-xwings-away-rb.jpg?1639339017") : "";
+          
+          //  Splits the current url paramater
           {myUrls.push((item.url).split('/'))}
-          {console.log(myUrls[index][5])}
+
           if (links[index]){
             ""
           }
@@ -58,6 +60,12 @@ export const Vehicles = () => {
                 <p className="card-text">Model: {item.model}</p>
                 <p className="card-text">Cargo Capacity: {item.cargo_capacity}</p>
                 <p className="card-text">Cost in credits: {item.cost_in_credits}</p>
+
+                {/* Uses the url paramiter thats comes from the API and gets the 6th
+                    possition after the slashes. If this doesnt work in the future
+                    then we should grab the last item instead of the 6th slash */}
+
+                    {/* Index is there as we are adding the valid urls to */}
                 <Link to={'/Vehicles/'+myUrls[index][5]} className="btn btn-primary">
                   Go somewhere
                 </Link>
