@@ -38,6 +38,8 @@ export const Characters = () => {
             //       link = 'https://bitsofco.de/content/images/2018/12/broken-1.png';
             //       break;
 
+
+
             item.name == 'Luke Skywalker' ? links.push('https://lumiere-a.akamaihd.net/v1/images/luke-skywalker-main_fb34a1ff.jpeg?region=131%2C0%2C951%2C536') : ""
             item.name == 'C-3PO' ? links.push('https://lumiere-a.akamaihd.net/v1/images/c-3po-main_417a2902.jpeg?region=176%2C0%2C951%2C536') : ""
             item.name == 'R2-D2' ? links.push('https://lumiere-a.akamaihd.net/v1/images/r2-d2-main_f315b094.jpeg?region=273%2C0%2C951%2C536') : ""
