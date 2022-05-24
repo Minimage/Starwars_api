@@ -9,6 +9,7 @@ import { CharacterPage } from "./views/CharacterPage";
 import { PlanetPage } from "./views/PlanetPage";
 import injectContext from "./store/appContext";
 import { Characters } from "./views/Characters";
+import Likes from "./views/Likes";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
@@ -29,6 +30,7 @@ const Layout = () => {
           <Navbar />
           <Switch>
             <Route exact path="/">
+
               <Home />
 
             </Route>

@@ -1,6 +1,5 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import Likes from './Likes'
 let links = []
 
 
@@ -25,7 +24,7 @@ export const Characters = () => {
 
 
         <div>
-          <h1>{Likes}</h1>
+
           <div className='myText'>
             <h1>Characters</h1>
             

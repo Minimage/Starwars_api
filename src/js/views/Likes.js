@@ -1,12 +1,13 @@
 import React from "react";
 
 
-const Likes = () => {
+export const Likes = () => {
+    const list = ['hello','test']
     return(
         <div className="likeBar">
             <h1>hello</h1>
         </div>
+        
     )
 }
 
-export default Likes;

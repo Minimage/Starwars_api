@@ -4,6 +4,7 @@ import "../../styles/home.css";
 import { Characters } from "./Characters";
 import { Planets } from "./Planets";
 import { Vehicles } from "./Vehicles";
+import Likes from "./Likes";
 
 
 export const Home = () => {
@@ -12,6 +13,7 @@ export const Home = () => {
     <div>
       <div className="myBox">
       <div className="scrolling-wrapper">
+
         {" "}
         <Characters />
       </div>
