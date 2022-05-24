@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 let links = []
 
 
@@ -12,6 +13,9 @@ export const Characters = () => {
     const payload = await response.json();
     setCharacters(payload.results);
     
+   
+
+    
     };
     fn();
   }, []);
@@ -20,8 +24,10 @@ export const Characters = () => {
 
 
         <div>
+
           <div className='myText'>
             <h1>Characters</h1>
+            
           </div>
             <ul className='scroll'>
         {characters.map((item, index) => {
@@ -33,6 +39,8 @@ export const Characters = () => {
             //     default:
             //       link = 'https://bitsofco.de/content/images/2018/12/broken-1.png';
             //       break;
+
+
 
             item.name == 'Luke Skywalker' ? links.push('https://lumiere-a.akamaihd.net/v1/images/luke-skywalker-main_fb34a1ff.jpeg?region=131%2C0%2C951%2C536') : ""
             item.name == 'C-3PO' ? links.push('https://lumiere-a.akamaihd.net/v1/images/c-3po-main_417a2902.jpeg?region=176%2C0%2C951%2C536') : ""
@@ -63,7 +71,7 @@ export const Characters = () => {
   <p className="card-text">Gender: {item.gender}</p>
   <p className="card-text">Hair-Color: {item.hair_color}</p>
   <p className="card-text">Eye-Color: {item.eye_color}</p>
-  <a href="#" className="btn btn-primary">Go somewhere</a>
+  <Link to={'/Characters/'+(index+1)} className="btn btn-primary">Go somewhere</Link>
 </div>
 </div>
             )

@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom'
 let links = [];
 
 export const Planets = () => {
@@ -51,9 +52,9 @@ export const Planets = () => {
                 <p className="card-text">Population: {item.population}</p>
                 <p className="card-text">Gravity: {item.gravity}</p>
                 <p className="card-text">Climate: {item.climate}</p>
-                <a href="#" className="btn btn-primary">
+                <Link to={'/Planets/'+(index+1)} className="btn btn-primary">
                   Go somewhere
-                </a>
+                </Link>
               </div>
             </div>
           );
