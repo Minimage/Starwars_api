@@ -9,7 +9,7 @@ import { CharacterPage } from "./views/CharacterPage";
 import { PlanetPage } from "./views/PlanetPage";
 import injectContext from "./store/appContext";
 import { Characters } from "./views/Characters";
-import Likes from "./views/Likes";
+import {Likes} from "./views/Likes";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
@@ -17,12 +17,13 @@ import { Vehicles } from "./views/Vehicles";
 import { Planets } from "./views/Planets";
 import { VehiclePage } from "./views/VehiclePage";
 
+import {list} from './views/Likes'
 //create your first component
 const Layout = () => {
   //the basename is used when your project is published in a subdirectory and not in the root of the domain
   // you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
   const basename = process.env.BASENAME || "";
-
+  {list.push('hello')}
   return (
     <div>
       <BrowserRouter basename={basename}>
@@ -30,6 +31,8 @@ const Layout = () => {
           <Navbar />
           <Switch>
             <Route exact path="/">
+            {list}
+            <Likes />
 
               <Home />
 

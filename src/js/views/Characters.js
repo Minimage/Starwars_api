@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {Link} from 'react-router-dom'
+import {list, ThemeContext, ThemeContext1} from './Likes'
 let links = []
 
-
 export const Characters = () => {
+    const fav1 = useContext(ThemeContext)
+    const setFav1 = useContext(ThemeContext1)
     const [characters, setCharacters] = React.useState([]);
+    const [fav, setFav] = React.useState([])
 
     //Characters
     React.useEffect(() => {
@@ -12,26 +15,19 @@ export const Characters = () => {
     const response = await fetch("https://swapi.dev/api/people");
     const payload = await response.json();
     setCharacters(payload.results);
-    
-   
-
-    
     };
     fn();
   }, []);
 
     return(
-
-
         <div>
-
           <div className='myText'>
             <h1>Characters</h1>
-            
           </div>
             <ul className='scroll'>
         {characters.map((item, index) => {
           let link;
+          //{list.push(item.name)}
           
             // switch (item.name) {
             //   case 'Luke Skywalker':
@@ -39,8 +35,6 @@ export const Characters = () => {
             //     default:
             //       link = 'https://bitsofco.de/content/images/2018/12/broken-1.png';
             //       break;
-
-
 
             item.name == 'Luke Skywalker' ? links.push('https://lumiere-a.akamaihd.net/v1/images/luke-skywalker-main_fb34a1ff.jpeg?region=131%2C0%2C951%2C536') : ""
             item.name == 'C-3PO' ? links.push('https://lumiere-a.akamaihd.net/v1/images/c-3po-main_417a2902.jpeg?region=176%2C0%2C951%2C536') : ""
@@ -53,7 +47,6 @@ export const Characters = () => {
             item.name == 'Biggs Darklighter' ? links.push('https://lumiere-a.akamaihd.net/v1/images/image_606ff7f7.jpeg?region=0%2C0%2C1560%2C878&width=1200'): ""
             item.name == 'Obi-Wan Kenobi' ? links.push('https://lumiere-a.akamaihd.net/v1/images/obi-wan-kenobi-main_95819950.jpeg?region=0%2C0%2C1280%2C720&width=1200') : ""
             
-            
             if (links[index]){
               ""
             }
@@ -63,7 +56,6 @@ export const Characters = () => {
 
         return (
 
-           
 <div className="card" style={{width: "18rem;"}}>
 <img className="card-img-top" src={links[index]} alt="Card image cap"/>
 <div className="card-body">
@@ -72,6 +64,12 @@ export const Characters = () => {
   <p className="card-text">Hair-Color: {item.hair_color}</p>
   <p className="card-text">Eye-Color: {item.eye_color}</p>
   <Link to={'/Characters/'+(index+1)} className="btn btn-primary">Go somewhere</Link>
+  <button onClick={()=>{
+
+        setFav(fav => [...fav, item.name]);
+        console.log(fav)
+  }}>hello</button>
+  {fav}
 </div>
 </div>
             )
