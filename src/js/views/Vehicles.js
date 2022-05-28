@@ -1,11 +1,13 @@
-import React from "react";
+import React, {useContext} from "react";
 import {Link} from 'react-router-dom'
+import { userContext } from "./Likes";
 let links = []
 let myUrls = []
 
 
 
 export const Vehicles = () => {
+  const {val,setVal} = useContext(userContext);
   React.useEffect(() => {
     const fn = async () => {
       const response = await fetch("https://swapi.dev/api/starships");
@@ -69,6 +71,9 @@ export const Vehicles = () => {
                 <Link to={'/Vehicles/'+myUrls[index][5]} className="btn btn-primary">
                   Go somewhere
                 </Link>
+                <button onClick={()=>{
+                  setVal([...val,item.name])
+                }}>Add Favorites</button>
               </div>
             </div>
           );

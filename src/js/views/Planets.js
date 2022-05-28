@@ -1,9 +1,12 @@
-import React from "react";
+import React, {useContext} from "react";
+import { userContext } from "./Likes";
 import {Link} from 'react-router-dom'
+
 let links = [];
 
 export const Planets = () => {
   const [planets, setPlanets] = React.useState([]);
+  const {val,setVal} = useContext(userContext);
 
   React.useEffect(() => {
     const fn = async () => {
@@ -55,6 +58,9 @@ export const Planets = () => {
                 <Link to={'/Planets/'+(index+1)} className="btn btn-primary">
                   Go somewhere
                 </Link>
+                <button onClick={()=>{
+                  setVal([...val,item.name])
+                }}>Add Favorites</button>
               </div>
             </div>
           );
