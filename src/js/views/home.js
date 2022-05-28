@@ -1,19 +1,22 @@
-import React from "react";
+import React, {useContext} from "react";
 import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
 import { Characters } from "./Characters";
 import { Planets } from "./Planets";
 import { Vehicles } from "./Vehicles";
-import Likes from "./Likes";
+import { userContext } from "./Likes";
+
 
 
 export const Home = () => {
+  const {value, setValue} = useContext(userContext)
 
   return (
     <div>
+
       <div className="myBox">
       <div className="scrolling-wrapper">
-
+        {value}
         {" "}
         <Characters />
       </div>
@@ -32,8 +35,11 @@ export const Home = () => {
       <div className="scrolling-wrapper">
         {" "}
       <Vehicles />
+      
       </div>
+      
       </div>
+
     </div>
     
   );

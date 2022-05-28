@@ -1,13 +1,16 @@
 import React, { useContext } from 'react'
 import {Link} from 'react-router-dom'
-import {list, ThemeContext, ThemeContext1} from './Likes'
+import { userContext } from './Likes'
+
+
 let links = []
 
+
 export const Characters = () => {
-    const fav1 = useContext(ThemeContext)
-    const setFav1 = useContext(ThemeContext1)
+    const {value, setValue} = useContext(userContext)
     const [characters, setCharacters] = React.useState([]);
     const [fav, setFav] = React.useState([])
+
 
     //Characters
     React.useEffect(() => {
@@ -21,6 +24,7 @@ export const Characters = () => {
 
     return(
         <div>
+          {fav}
           <div className='myText'>
             <h1>Characters</h1>
           </div>
@@ -59,17 +63,17 @@ export const Characters = () => {
 <div className="card" style={{width: "18rem;"}}>
 <img className="card-img-top" src={links[index]} alt="Card image cap"/>
 <div className="card-body">
+<p>{value}</p>
   <h5 className="card-title"> {item.name}</h5>
   <p className="card-text">Gender: {item.gender}</p>
   <p className="card-text">Hair-Color: {item.hair_color}</p>
   <p className="card-text">Eye-Color: {item.eye_color}</p>
   <Link to={'/Characters/'+(index+1)} className="btn btn-primary">Go somewhere</Link>
   <button onClick={()=>{
-
-        setFav(fav => [...fav, item.name]);
-        console.log(fav)
+        
+        // setValue(value => [...value, item.name]);
+        console.log(value)
   }}>hello</button>
-  {fav}
 </div>
 </div>
             )
