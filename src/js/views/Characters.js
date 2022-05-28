@@ -7,7 +7,9 @@ let links = []
 
 
 export const Characters = () => {
-    const {value, setValue} = useContext(userContext)
+    // const {value, setValue} = useContext(userContext)
+    const {val,setVal} = useContext(userContext);
+    
     const [characters, setCharacters] = React.useState([]);
     const [fav, setFav] = React.useState([])
 
@@ -63,16 +65,18 @@ export const Characters = () => {
 <div className="card" style={{width: "18rem;"}}>
 <img className="card-img-top" src={links[index]} alt="Card image cap"/>
 <div className="card-body">
-<p>{value}</p>
+{/* <p>{value}</p> */}
+{val}
   <h5 className="card-title"> {item.name}</h5>
   <p className="card-text">Gender: {item.gender}</p>
   <p className="card-text">Hair-Color: {item.hair_color}</p>
   <p className="card-text">Eye-Color: {item.eye_color}</p>
   <Link to={'/Characters/'+(index+1)} className="btn btn-primary">Go somewhere</Link>
   <button onClick={()=>{
-        
-        // setValue(value => [...value, item.name]);
-        console.log(value)
+        setVal([...val, item.name]);
+
+        // setval(val => [...val, item.name]);
+        console.log(val)
   }}>hello</button>
 </div>
 </div>
