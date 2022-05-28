@@ -1,6 +1,7 @@
-import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import React, {useState} from "react";
+import { BrowserRouter, Route, Switch, } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
+import {userContext} from './views/Likes'
 
 import { Home } from "./views/home";
 import { Demo } from "./views/demo";
@@ -9,7 +10,7 @@ import { CharacterPage } from "./views/CharacterPage";
 import { PlanetPage } from "./views/PlanetPage";
 import injectContext from "./store/appContext";
 import { Characters } from "./views/Characters";
-import Likes from "./views/Likes";
+
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
@@ -17,18 +18,25 @@ import { Vehicles } from "./views/Vehicles";
 import { Planets } from "./views/Planets";
 import { VehiclePage } from "./views/VehiclePage";
 
+
+
 //create your first component
 const Layout = () => {
+  const [val, setVal] = useState([]);
+  const noDuplicates = new Set(val)
   //the basename is used when your project is published in a subdirectory and not in the root of the domain
   // you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
   const basename = process.env.BASENAME || "";
+  
 
   return (
     <div>
       <BrowserRouter basename={basename}>
         <ScrollToTop>
+        <userContext.Provider value={{val,setVal}}>
           <Navbar />
           <Switch>
+           
             <Route exact path="/">
 
               <Home />
@@ -54,10 +62,14 @@ const Layout = () => {
 
 
 
+           
+           
             <Route>
               <h1>Not found!</h1>
             </Route>
+             
           </Switch>
+          </userContext.Provider>
           <Footer />
         </ScrollToTop>
       </BrowserRouter>

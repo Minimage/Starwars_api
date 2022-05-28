@@ -1,13 +1,3 @@
-import React from "react";
+import React, {createContext} from 'react'
 
-
-export const Likes = () => {
-    const list = ['hello','test']
-    return(
-        <div className="likeBar">
-            <h1>hello</h1>
-        </div>
-        
-    )
-}
-
+export const userContext = createContext(null)
