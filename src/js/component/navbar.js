@@ -37,7 +37,9 @@ export const Navbar = () => {
             {myArr.map((item, index, array) => {
               return (
                 <>
+                <Link to={'/Characters'}>
                   <li>{item}</li>
+                  </Link>
                   <button
                     onClick={() => {
 
@@ -48,6 +50,8 @@ export const Navbar = () => {
                     {" "}
                     Del
                   </button>
+                
+
                 </>
               );
             })}
