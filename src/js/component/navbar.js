@@ -22,7 +22,7 @@ export const Navbar = () => {
         </span>
       </Link>
       <div className="ml-auto">
-        {/* <Link to="/demo"> */}
+        
         <div class="dropdown">
           <button
             class="btn btn-secondary dropdown-toggle"
@@ -37,7 +37,9 @@ export const Navbar = () => {
             {myArr.map((item, index, array) => {
               return (
                 <>
+                {/* <Link to="/"> */}
                   <li>{item}</li>
+                  {/* </Link> */}
                   <button
                     onClick={() => {
 
@@ -53,7 +55,7 @@ export const Navbar = () => {
             })}
           </ul>
         </div>
-        {/* </Link> */}
+        
       </div>
     </nav>
   );
