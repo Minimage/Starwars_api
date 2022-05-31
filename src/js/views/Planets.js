@@ -46,7 +46,7 @@ export const Planets = () => {
           return (
             <div className="card" style={{ width: "18rem;" }}>
               <img
-                class="card-img-top"
+                className="card-img-top"
                 src={links[index]}
                 alt="Card image cap"
               />

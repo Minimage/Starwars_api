@@ -15,17 +15,16 @@ export const Navbar = () => {
   let arrlen;
 
   return (
-    <nav className="navbar navbar-light bg-light mb-3">
+    <nav className="navbar navbar-light bg-light mb-3 fixed-top">
       <Link to="/">
         <span className="navbar-brand mb-0 h1" style={{ color: "" }}>
           Home
         </span>
       </Link>
       <div className="ml-auto">
-        
-        <div class="dropdown">
+        <div className="dropdown ">
           <button
-            class="btn btn-secondary dropdown-toggle"
+            className="btn btn-secondary dropdown-toggle"
             type="button"
             id="dropdownMenuButton1"
             data-bs-toggle="dropdown"
@@ -33,18 +32,18 @@ export const Navbar = () => {
           >
             Favorites {myArr.length}
           </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <ul className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             {myArr.map((item, index, array) => {
               return (
                 <>
-                {/* <Link to="/"> */}
+                  {/* <Link to="/"> */}
                   <li>{item}</li>
                   {/* </Link> */}
                   <button
+                    className="delete"
                     onClick={() => {
-
-						noDuplicates.delete(item)
-            setVal(noDuplicates)
+                      noDuplicates.delete(item);
+                      setVal(noDuplicates);
                     }}
                   >
                     {" "}
@@ -55,7 +54,6 @@ export const Navbar = () => {
             })}
           </ul>
         </div>
-        
       </div>
     </nav>
   );

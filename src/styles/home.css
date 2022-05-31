@@ -34,6 +34,8 @@
 
 .top {
     height: 60vh;
+    margin-top: 80px;
+
 }
 
 .left>img{
@@ -68,3 +70,9 @@ visibility: hidden;
 
 
 
+.dropdown-menu > li {
+
+    float: left;
+}
+
+.delete {float: left;}
