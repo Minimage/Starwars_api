@@ -69,7 +69,7 @@ export const Vehicles = () => {
 
                     {/* Index is there as we are adding the valid urls to */}
                 <Link to={'/Vehicles/'+myUrls[index][5]} className="btn btn-primary">
-                  Go somewhere
+                  View Vehicle
                 </Link>
                 <button onClick={()=>{
                   setVal([...val,item.name])

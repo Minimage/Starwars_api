@@ -56,7 +56,7 @@ export const Planets = () => {
                 <p className="card-text">Gravity: {item.gravity}</p>
                 <p className="card-text">Climate: {item.climate}</p>
                 <Link to={'/Planets/'+(index+1)} className="btn btn-primary">
-                  Go somewhere
+                  View Planet
                 </Link>
                 <button onClick={()=>{
                   setVal([...val,item.name])
